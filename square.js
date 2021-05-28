@@ -1,26 +1,12 @@
-var firstLine = function (arr) {
-  var k = '';
-  for (var i = 0; i < arr.length; i++) {
-    k = k + arr[i];
-  }
-  return k + '\n';
-};
-
-const lastLine = (arr) => {
-	var m = '';
-	for (var i = arr.length; i > 0; i--){
-		m = m + arr[i - 1];
-	}
-	return m + '\n';
+const firstLine = (arr) => {
+	return arr.join('') + '\n';
 }
 
-var spaceCount = function (space) {
-	var k = '';
-	for (var i = 0; i < space; i++) {
-		k = k + ' ';
-	}
-	return k;
-};
+const lastLine = (arr) => {
+	var reversed = arr.reverse();
+
+	return reversed.join('') + '\n';
+}
 
 var charac = function (val, arr) {
 	var k = '';
@@ -35,7 +21,7 @@ const middleLines = (arr) => {
 
 	var m = arr.length - 1;
 	var count = arr.length - 2;
-	var spaces = spaceCount(count);
+	var spaces = ' '.repeat(count);
 
 	for (var i = 0; i < count; i++) {
 		var firstCharacter = arr[i + 1];
