@@ -1,12 +1,10 @@
 const middleLines = (arr) => {
-	var result = '';
-	var count = arr.length - 2;
-	var spaces = ' '.repeat(count);
+	let result = '';
+	const count = arr.length - 2;
+	const spaces = ' '.repeat(count);
 
-	for (var i = 0; i < count; i++) {
-		var firstCharacter = arr[i + 1];
-		var secondCharacter = arr[count - i];
-		result = result + firstCharacter + spaces + secondCharacter + '\n';
+	for (let i = 0; i < count; i++) {
+		result += arr[i + 1] + spaces + arr[count - i] + '\n';
 	}
 
 	return result;
