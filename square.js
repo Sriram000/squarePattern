@@ -1,4 +1,5 @@
-var arr = ['a', 'b', 'c', 'd', 'e'];
+const square = (arr) => {
+
 var firstLine = function (arr) {
   var k = '';
   for (var i = 0; i < arr.length; i++) {
@@ -39,3 +40,8 @@ for (var i = arr.length; i > 0; i--) {
   m = m + arr[i - 1];
 }
 console.log(m);
+}
+
+square(['a', 'b']);
+square(['a', 'b', 'c']);
+square(['a', 'b', 'c', 'd', 'e']);
