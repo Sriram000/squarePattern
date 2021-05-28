@@ -1,20 +1,18 @@
 const middleLines = (arr) => {
-	let result = '';
-	const lastIndex = arr.length;
-	const spaces = ' '.repeat(lastIndex);
-
-	for (let i = 0; i < lastIndex; i++) {
-		result += arr[i] + spaces + arr[lastIndex - i - 1] + '\n';
-	}
-
-	return result;
+	return arr.map((val, i, arr) =>
+		val + ' '.repeat(arr.length) + arr[arr.length - i - 1] );
 }
 
 const square = (arr) => {
-	const firstLine = arr.join('') + '\n';
-	const lastLine = arr.slice().reverse().join('') + '\n';
+	const firstLine = arr.join('');
+	const lastLine = arr.slice().reverse().join('');
+	const lines = [
+		firstLine,
+		...middleLines(arr.slice(1, -1)),
+		lastLine,
+	];
 
-	return firstLine + middleLines(arr.slice(1, -1)) + lastLine;
+	return lines.join('\n');
 }
 
 console.log(square(['a', 'b']));
