@@ -1,10 +1,10 @@
 const middleLines = (arr) => {
 	let result = '';
-	const lastIndex = arr.length - 1;
-	const spaces = ' '.repeat(lastIndex - 1);
+	const lastIndex = arr.length;
+	const spaces = ' '.repeat(lastIndex);
 
-	for (let i = 1; i < lastIndex; i++) {
-		result += arr[i] + spaces + arr[lastIndex - i] + '\n';
+	for (let i = 0; i < lastIndex; i++) {
+		result += arr[i] + spaces + arr[lastIndex - i - 1] + '\n';
 	}
 
 	return result;
@@ -14,7 +14,7 @@ const square = (arr) => {
 	const firstLine = arr.join('') + '\n';
 	const lastLine = arr.slice().reverse().join('') + '\n';
 
-	return firstLine + middleLines(arr) + lastLine;
+	return firstLine + middleLines(arr.slice(1, -1)) + lastLine;
 }
 
 console.log(square(['a', 'b']));
