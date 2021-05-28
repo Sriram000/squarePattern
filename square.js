@@ -23,20 +23,11 @@ var charac = function (val) {
     return k;
   }
 };
-var repeat = function (char, length) {
-  var m = '';
-  var n = char;
-  for (var i = 0; i < length; i++) {
-    m = m + n;
-  }
-  return m;
-};
+
 var m = arr.length - 1;
 var count = arr.length - 2;
-
 var spaces = spaceCount(count);
-var spaces = repeat(" ", count);
-var k = '';
+
 for (var i = 0; i < count; i++) {
   var firstCharacter = arr[i + 1];
 
