@@ -3,7 +3,7 @@ var firstLine = function (arr) {
   for (var i = 0; i < arr.length; i++) {
     k = k + arr[i];
   }
-  return k;
+  return k + '\n';
 };
 
 const lastLine = (arr) => {
@@ -11,10 +11,11 @@ const lastLine = (arr) => {
 	for (var i = arr.length; i > 0; i--){
 		m = m + arr[i - 1];
 	}
-	console.log(m);
+	return m + '\n';
 }
 
 const middleLines = (arr) => {
+	var result = '';
 	var spaceCount = function (space) {
 		var k = '';
 		for (var i = 0; i < space; i++) {
@@ -39,18 +40,15 @@ const middleLines = (arr) => {
 		var firstCharacter = arr[i + 1];
 
 		var secondCharacter = charac(m - i);
-		console.log(firstCharacter + spaces + secondCharacter);
+		result = result + firstCharacter + spaces + secondCharacter + '\n';
 	}
-
+	return result;
 }
 
 const square = (arr) => {
-	console.log(firstLine(arr));
-	middleLines(arr);
-	lastLine(arr);
+	return firstLine(arr) + middleLines(arr) + lastLine(arr);
 }
 
-
-square(['a', 'b']);
-square(['a', 'b', 'c']);
-square(['a', 'b', 'c', 'd', 'e']);
+console.log(square(['a', 'b']));
+console.log(square(['a', 'b', 'c']));
+console.log(square(['a', 'b', 'c', 'd', 'e']));
