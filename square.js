@@ -8,10 +8,6 @@ const lastLine = (arr) => {
 	return reversed.join('') + '\n';
 }
 
-const charac = (val, arr) => {
-	return arr[val - 1];
-}
-
 const middleLines = (arr) => {
 	var result = '';
 
@@ -22,7 +18,7 @@ const middleLines = (arr) => {
 	for (var i = 0; i < count; i++) {
 		var firstCharacter = arr[i + 1];
 
-		var secondCharacter = charac(m - i, arr);
+		var secondCharacter = arr[m - i - 1];
 		result = result + firstCharacter + spaces + secondCharacter + '\n';
 	}
 	return result;
