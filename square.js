@@ -1,13 +1,3 @@
-const firstLine = (arr) => {
-	return arr.join('') + '\n';
-}
-
-const lastLine = (arr) => {
-	var reversed = arr.reverse();
-
-	return reversed.join('') + '\n';
-}
-
 const middleLines = (arr) => {
 	var result = '';
 	var count = arr.length - 2;
@@ -23,7 +13,10 @@ const middleLines = (arr) => {
 }
 
 const square = (arr) => {
-	return firstLine(arr) + middleLines(arr) + lastLine(arr);
+	const firstLine = arr.join('') + '\n';
+	const lastLine = arr.slice().reverse().join('') + '\n';
+
+	return firstLine + middleLines(arr) + lastLine;
 }
 
 console.log(square(['a', 'b']));
