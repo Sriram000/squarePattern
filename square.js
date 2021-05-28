@@ -1,14 +1,12 @@
-const middleLines = (arr) => {
-	return arr.map((val, i, arr) =>
-		val + ' '.repeat(arr.length) + arr[arr.length - i - 1] );
-}
-
 const square = (arr) => {
 	const firstLine = arr.join('');
+	const middleLines = arr.slice(1, -1).map((val, i, arr) =>
+		val + ' '.repeat(arr.length) + arr[arr.length - i - 1] );
 	const lastLine = arr.slice().reverse().join('');
+
 	const lines = [
 		firstLine,
-		...middleLines(arr.slice(1, -1)),
+		...middleLines,
 		lastLine,
 	];
 
