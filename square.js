@@ -8,13 +8,9 @@ const lastLine = (arr) => {
 	return reversed.join('') + '\n';
 }
 
-var charac = function (val, arr) {
-	var k = '';
-	for (var j = val; j > 0; j--) {
-		k = k + arr[j - 1];
-		return k;
-	}
-};
+const charac = (val, arr) => {
+	return arr[val - 1];
+}
 
 const middleLines = (arr) => {
 	var result = '';
