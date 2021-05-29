@@ -8,7 +8,7 @@ var repeat = function (char, length) {
   }
   return m;
 };
-repeat('a', 5);
+
 var diamond = function () {
 
   var columns = arr.length * 2 - 1;
