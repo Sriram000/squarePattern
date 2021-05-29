@@ -1,10 +1,5 @@
 var repeat = function (char, length) {
-  var m = '';
-  var n = char;
-  for (var i = 0; i < length; i++) {
-    m = m + n;
-  }
-  return m;
+  return char.repeat(length);
 };
 
 var diamond = function (arr) {
