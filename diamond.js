@@ -1,7 +1,3 @@
-var repeat = function (char, length) {
-  return char.repeat(length);
-};
-
 var diamond = function (arr) {
 
   var columns = arr.length * 2 - 1;
@@ -10,15 +6,15 @@ var diamond = function (arr) {
   for (var i = 0; i < arr.length; i++) {
     var n = 2 * i + 1;
     var spaceCount = (columns - n) / 2;
-    var spaces = repeat(' ', spaceCount);
-    var characters = repeat(arr[i], 2 * i + 1);
+    var spaces = ' '.repeat(spaceCount);
+    var characters = arr[i].repeat(n);
     result += spaces + characters + spaces + '\n';
   }
   for (var i = arr.length - 1; i > 0; i--) {
     var n = 2 * i - 1;
     var spaceCount = (columns - n) / 2;
-    var spaces = repeat(' ', spaceCount);
-    var characters = repeat(arr[i - 1], 2 * i - 1);
+    var spaces = ' '.repeat(spaceCount);;
+    var characters = arr[i - 1].repeat(n);
     result += spaces + characters + spaces + '\n';
   }
 	return result;
