@@ -1,0 +1,23 @@
+/*
+
+ a
+b b
+ a
+
+  a
+ b b
+c   c
+ b b
+  a
+
+    a
+   b b
+  c   c
+ d     d
+e       e
+ d     d
+  c   c
+   b b
+    a
+
+*/
