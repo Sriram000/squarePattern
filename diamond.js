@@ -1,5 +1,4 @@
 var diamond = function (arr) {
-
   var count = arr.length * 2 - 1;
 	var result = '';
 
@@ -11,13 +10,10 @@ var diamond = function (arr) {
     var characters = arr[charPos-1].repeat(charCount);
     result += spaces + characters + spaces + '\n';
   }
+
 	return result;
 }
 
-const diamondPattern = (arr) => {
-	return diamond(arr);
-}
-
-console.log(diamondPattern(['a', 'b']));
-console.log(diamondPattern(['a', 'b', 'c']));
-console.log(diamondPattern(['a', 'b', 'c', 'd', 'e']));
+console.log(diamond(['a', 'b']));
+console.log(diamond(['a', 'b', 'c']));
+console.log(diamond(['a', 'b', 'c', 'd', 'e']));
