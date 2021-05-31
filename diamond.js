@@ -1,20 +1,14 @@
 var diamond = function (arr) {
 
-  var columns = arr.length * 2 - 1;
+  var count = arr.length * 2 - 1;
 	var result = '';
 
-  for (var i = 0; i < arr.length; i++) {
-    var n = 2 * i + 1;
-    var spaceCount = (columns - n) / 2;
+  for (var i = 1; i <= count; i++) {
+    var charPos = arr.length - Math.abs(arr.length - i);
+    var charCount = 2 * charPos - 1;
+    var spaceCount = (count - charCount) / 2;
     var spaces = ' '.repeat(spaceCount);
-    var characters = arr[i].repeat(n);
-    result += spaces + characters + spaces + '\n';
-  }
-  for (var i = arr.length - 1; i > 0; i--) {
-    var n = 2 * i - 1;
-    var spaceCount = (columns - n) / 2;
-    var spaces = ' '.repeat(spaceCount);;
-    var characters = arr[i - 1].repeat(n);
+    var characters = arr[charPos-1].repeat(charCount);
     result += spaces + characters + spaces + '\n';
   }
 	return result;
