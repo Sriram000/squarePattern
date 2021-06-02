@@ -1,4 +1,5 @@
 const msPerDay = 1000 * 60 * 60 * 24;
+const namedDays = ['Yesterday', 'Today', 'Tomorrow'];
 const diffDays = (date1, date2) => {
 	const diffTime = date1 - date2;
 	const diffDays = diffTime / msPerDay;
@@ -10,14 +11,8 @@ const diffDays = (date1, date2) => {
 	else if(diffDaysRoundedUp > 1) {
 		return diffDaysRoundedUp + ' days left';
 	}
-	else if(diffDaysRoundedUp === 0) {
-		return 'Today';
-	}
-	else if(diffDaysRoundedUp === -1) {
-		return 'Yesterday';
-	}
 	else {
-		return 'Tomorrow';
+		return namedDays[diffDaysRoundedUp + 1];
 	}
 }
 
