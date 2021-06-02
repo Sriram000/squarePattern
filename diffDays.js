@@ -21,8 +21,15 @@ const diffDays = (date1, date2) => {
 	}
 }
 
-console.log(diffDays(new Date('8/13/2015'), new Date( '8/15/2015')),'2 days ago');
-console.log(diffDays(new Date('8/14/2015'), new Date( '8/15/2015')),'Yesterday');
-console.log(diffDays(new Date('8/15/2015'), new Date( '8/15/2015')),'Today');
-console.log(diffDays(new Date('8/16/2015'), new Date( '8/15/2015')),'Tomorrow');
-console.log(diffDays(new Date('8/17/2015'), new Date( '8/15/2015')),'2 days left');
+const cases = [
+	['8/13/2015', '8/15/2015', '2 days ago'],
+	['8/14/2015', '8/15/2015', 'Yesterday'],
+	['8/15/2015', '8/15/2015', 'Today'],
+	['8/16/2015', '8/15/2015', 'Tomorrow'],
+	['8/17/2015', '8/15/2015', '2 days left'],
+];
+
+cases.forEach(([start, end, expected]) => {
+	const actual = diffDays(new Date(start), new Date(end));
+	console.log(actual, expected, actual === expected);
+});
