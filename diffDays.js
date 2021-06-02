@@ -4,12 +4,8 @@ const diffDays = (date1, date2) => {
 	const diffTime = date1 - date2;
 	const diffDays = Math.trunc(diffTime / msPerDay);
 
-	if(diffDays < -1 || diffDays > 1) {
-		return Math.abs(diffDays) + ' days ' + (diffDays < -1 ? 'ago' : 'left');
-	}
-	else {
-		return namedDays[diffDays + 1];
-	}
+		return namedDays[diffDays + 1]
+		 		|| Math.abs(diffDays) + ' days ' + (diffDays < -1 ? 'ago' : 'left');
 }
 
 const cases = [
