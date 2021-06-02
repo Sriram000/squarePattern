@@ -5,7 +5,7 @@ const diffDays = (date1, date2) => {
 	const diffDays = Math.trunc(diffTime / msPerDay);
 
 		return namedDays[diffDays + 1]
-		 		|| Math.abs(diffDays) + ' days ' + (diffDays < -1 ? 'ago' : 'left');
+		 		|| `${ Math.abs(diffDays) } days ${ (diffDays < 0 ? 'ago' : 'left') }`;
 }
 
 const cases = [
