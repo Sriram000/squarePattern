@@ -2,17 +2,13 @@ const msPerDay = 1000 * 60 * 60 * 24;
 const namedDays = ['Yesterday', 'Today', 'Tomorrow'];
 const diffDays = (date1, date2) => {
 	const diffTime = date1 - date2;
-	const diffDays = diffTime / msPerDay;
-	const diffDaysRoundedUp = Math.ceil(diffDays);
+	const diffDays = Math.trunc(diffTime / msPerDay);
 
-	if(diffDaysRoundedUp < -1) {
-		return Math.abs(diffDaysRoundedUp) + ' days ago';
-	}
-	else if(diffDaysRoundedUp > 1) {
-		return diffDaysRoundedUp + ' days left';
+	if(diffDays < -1 || diffDays > 1) {
+		return Math.abs(diffDays) + ' days ' + (diffDays < -1 ? 'ago' : 'left');
 	}
 	else {
-		return namedDays[diffDaysRoundedUp + 1];
+		return namedDays[diffDays + 1];
 	}
 }
 
