@@ -20,3 +20,9 @@ const diffDays = (date1, date2) => {
 		return 'Tomorrow';
 	}
 }
+
+console.log(diffDays(new Date('8/13/2015'), new Date( '8/15/2015')),'2 days ago');
+console.log(diffDays(new Date('8/14/2015'), new Date( '8/15/2015')),'Yesterday');
+console.log(diffDays(new Date('8/15/2015'), new Date( '8/15/2015')),'Today');
+console.log(diffDays(new Date('8/16/2015'), new Date( '8/15/2015')),'Tomorrow');
+console.log(diffDays(new Date('8/17/2015'), new Date( '8/15/2015')),'2 days left');
